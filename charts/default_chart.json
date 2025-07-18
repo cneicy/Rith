@@ -1,0 +1,42 @@
+{
+  "songInfo": {
+	"title": "未命名歌曲",
+	"artist": "Unknown",
+	"bpm": 120,
+	"difficulty": 5
+  },
+  "notes": [
+	{
+	  "lane": 0,
+	  "time": 0.529
+	},
+	{
+	  "lane": 0,
+	  "time": 1.681
+	},
+	{
+	  "lane": 0,
+	  "time": 2.877
+	},
+	{
+	  "lane": 0,
+	  "time": 3.896
+	},
+	{
+	  "lane": 0,
+	  "time": 5.225
+	},
+	{
+	  "lane": 0,
+	  "time": 6.686
+	},
+	{
+	  "lane": 0,
+	  "time": 8.237
+	},
+	{
+	  "lane": 0,
+	  "time": 9.654
+	}
+  ]
+}

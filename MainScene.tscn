@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8l0r4o8qgdip"]
+
+[ext_resource type="Script" uid="uid://gfuncec8yrdj" path="res://GameManager.cs" id="1_3mqji"]
+[ext_resource type="PackedScene" uid="uid://bri0qsbmfe44y" path="res://Scenes/Note.tscn" id="2_x4av3"]
+[ext_resource type="Script" uid="uid://c8lawtxhi8x7u" path="res://Receptor.cs" id="3_rpqi1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxrcv"]
+size = Vector2(79.5, 3.5)
+
+[node name="MainScene" type="Node"]
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("ScoreLabel", "JudgementLabel")]
+script = ExtResource("1_3mqji")
+NoteScene = ExtResource("2_x4av3")
+ScoreLabel = NodePath("../ScoreLabel")
+JudgementLabel = NodePath("../JudgementLabel")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="JudgementLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 42.0
+offset_bottom = 55.0
+
+[node name="Receptor1" type="Area2D" parent="."]
+position = Vector2(100, 600)
+script = ExtResource("3_rpqi1")
+HitAction = "lane1_press"
+PerfectTimingWindow = 40.0
+GoodTimingWindow = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Receptor1"]
+shape = SubResource("RectangleShape2D_uxrcv")
+
+[node name="ColorRect" type="ColorRect" parent="Receptor1/CollisionShape2D"]
+offset_left = -40.0
+offset_top = -2.25
+offset_right = 38.0
+offset_bottom = 1.75
+
+[node name="Receptor2" type="Area2D" parent="."]
+position = Vector2(200, 600)
+script = ExtResource("3_rpqi1")
+HitAction = "lane2_press"
+LaneIndex = 1
+PerfectTimingWindow = 40.0
+GoodTimingWindow = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Receptor2"]
+shape = SubResource("RectangleShape2D_uxrcv")
+
+[node name="ColorRect" type="ColorRect" parent="Receptor2/CollisionShape2D"]
+offset_left = -39.0
+offset_top = -1.0
+offset_right = 39.0
+offset_bottom = 3.0
+
+[node name="Receptor3" type="Area2D" parent="."]
+position = Vector2(300, 600)
+script = ExtResource("3_rpqi1")
+HitAction = "lane3_press"
+LaneIndex = 2
+PerfectTimingWindow = 40.0
+GoodTimingWindow = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Receptor3"]
+shape = SubResource("RectangleShape2D_uxrcv")
+
+[node name="ColorRect" type="ColorRect" parent="Receptor3/CollisionShape2D"]
+offset_left = -39.0
+offset_top = -2.0
+offset_right = 39.0
+offset_bottom = 3.0
+
+[node name="Receptor4" type="Area2D" parent="."]
+position = Vector2(400, 600)
+script = ExtResource("3_rpqi1")
+HitAction = "lane4_press"
+LaneIndex = 3
+PerfectTimingWindow = 40.0
+GoodTimingWindow = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Receptor4"]
+shape = SubResource("RectangleShape2D_uxrcv")
+
+[node name="ColorRect" type="ColorRect" parent="Receptor4/CollisionShape2D"]
+offset_left = -39.0
+offset_top = -2.0
+offset_right = 39.0
+offset_bottom = 2.0
